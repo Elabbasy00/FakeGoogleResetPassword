@@ -59,7 +59,7 @@ function App() {
       <Container maxWidth="sm">
         <Grid container spaching={2}>
           <Grid item xs={12}>
-            <Box className="form-elemnts">
+            <Box className="form-elemnts" component="a" href="https://accounts.google.com/AddSession/signinchooser?hl=ar&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&authuser=0&flowName=GlifWebSignIn&flowEntry=AddSession">
               <img className="google-logo" src={Logo} alt="logo" />
               <Typography
                 sx={{
