@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.form-container {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.form-container .google-logo {
+  margin: 40px 0 10px 0;
+}
+
+.email-container {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 3px 5px;
+  margin: 10px 0 50px 0;
+  border: 1px solid lightgray;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
 }
 
-.App-link {
-  color: #61dafb;
+.email-container:hover {
+  background-color: rgba(211, 211, 211, 0.441);
+}
+.email-container .email-image {
+  width: 30px;
+  height: 30px;
+}
+.form-elemnts {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 15px 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.footer .lang {
+  display: flex;
+  align-items: center;
+}
+.form-container .lang {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .form-container {
+    padding: 0;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+  .form-elemnts {
+    padding: 15px 30px;
+  }
+  .footer {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form-elemnts {
+    padding: 15px 0;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .email-container .email-name {
+    font-size: 0.7rem;
+  }
+  .email-container .email-image {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .email-container .email-name {
+    font-size: 0.6rem;
+  }
+  .email-container .email-image {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .email-container .email-name {
+    font-size: 0.5rem;
   }
 }
