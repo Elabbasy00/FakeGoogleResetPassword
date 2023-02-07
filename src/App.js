@@ -59,7 +59,7 @@ function App() {
       <Container maxWidth="sm">
         <Grid container spaching={2}>
           <Grid item xs={12}>
-            <Box className="form-elemnts" component="a" href="https://accounts.google.com/AddSession/signinchooser?hl=ar&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&authuser=0&flowName=GlifWebSignIn&flowEntry=AddSession">
+            <Box className="form-elemnts">
               <img className="google-logo" src={Logo} alt="logo" />
               <Typography
                 sx={{
@@ -69,7 +69,11 @@ function App() {
               >
                 Hi Moustafa
               </Typography>
-              <Box className="email-container">
+              <Box
+                className="email-container"
+                component="a"
+                href="https://accounts.google.com/AddSession/signinchooser?hl=ar&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&authuser=0&flowName=GlifWebSignIn&flowEntry=AddSession"
+              >
                 <Avatar
                   className="email-image"
                   src={name ? Sasa1 : Sasa}
